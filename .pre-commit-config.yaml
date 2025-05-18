@@ -1,0 +1,14 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 23.7.0  # 可以根据需要指定 black 的版本
+    hooks:
+      - id: black
+        language_version: python3
+  - repo: https://github.com/pycqa/pylint
+    rev: v3.0.2  # 可以根据需要指定 pylint 的版本
+    hooks:
+      - id: pylint
+        args: [
+          # 这里可以添加 pylint 的额外参数，例如指定配置文件
+          "--rcfile=.pylintrc"
+        ]

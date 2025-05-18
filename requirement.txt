@@ -1,0 +1,4 @@
+black>=23.11.0
+dotenv
+pre-commit
+pylint>=v3.0.2
