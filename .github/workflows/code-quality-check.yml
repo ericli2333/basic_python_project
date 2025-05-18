@@ -15,6 +15,8 @@ jobs:
 
       - name: Set up Python
         uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"  # 你可以根据项目需求修改 Python 版本
 
       - name: Install dependencies
         run: |
