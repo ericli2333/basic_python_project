@@ -1,0 +1,17 @@
+# 定义 CI/CD 流程的阶段
+stages:
+  - lint
+
+# 定义 pylint 任务
+pylint_job:
+  stage: lint
+  image: python:3.10  # 使用 Python 3.10 镜像，对应 GitHub Actions 里的 Python 版本
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'  # 当 main 分支有 push 操作时触发
+      when: always
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'  # 当针对 main 分支的合并请求时触发
+      when: always
+  script:
+    - python -m pip install --upgrade pip  # 升级 pip
+    - pip install pylint  # 安装 pylint
+    - pylint $(git ls-files '*.py') --rcfile=.pylintrc  # 执行 pylint 代码分析
