@@ -7,3 +7,4 @@
 *.mp4
 logs/
 .DS_Store
+tmp/
