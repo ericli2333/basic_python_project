@@ -1,1 +1,8 @@
 .env
+.bash_profile
+*.pyc
+/__pycache__/
+*.jpg
+*.png
+*.mp4
+logs/
