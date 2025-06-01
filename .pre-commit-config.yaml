@@ -12,3 +12,9 @@ repos:
           # 这里可以添加 pylint 的额外参数，例如指定配置文件
           "--rcfile=.pylintrc"
         ]
+  -   repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v2.3.0
+      hooks:
+      -   id: check-yaml
+      -   id: end-of-file-fixer
+      -   id: trailing-whitespace
